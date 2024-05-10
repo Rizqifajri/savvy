@@ -4,7 +4,7 @@ import googlePlay from "../assets/googleplay.png";
 
 const ProductDownload = () => {
   return (
-    <section className="py-24">
+    <section id="how-to-get" className="py-24">
       <div className='flex flex-col md:flex-row justify-center gap-10'>
         <div>
           <img src={product} alt='' />

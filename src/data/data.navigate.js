@@ -1,22 +1,22 @@
 export const dataNavigate = [
   {
     title: "About",
-    href:"/"
+    href:"about"
   },
   {
     title: "Feature",
-    href:"/"
+    href:"feature"
   },
   {
     title: "How it works",
-    href:"/"
+    href:"how-it-works"
   },
   {
     title: "Faq",
-    href:"/"
+    href:"faq"
   },
   {
     title: "How to get",
-    href:"/"
+    href:"how-to-get"
   },
 ]

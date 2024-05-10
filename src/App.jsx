@@ -5,6 +5,7 @@ import SavvyGuide from "./components/SavvyGuide";
 import Faq from "./components/Faq"
 import React from "react";
 import ProductDownload from "./components/ProductDownload";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <SavvyGuide />
       <Faq/>
       <ProductDownload/>
+      <Footer />
     </>
   );
 }

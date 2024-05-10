@@ -1,14 +1,14 @@
 export const dataSavvyFeature = [
   {
-    title: "Catat Transaski",
-    desc: "Maksimalkan waktumu sebagai pebisnis hebat dengan pencatatan transaksi yang mudah dan lengkap."
+    title: "Record Transactions",
+    desc: "Maximize your time as a great businessman with easy and complete transaction recording."
   },
   {
-    title: "Laporan Keuangan",
-    desc: "Kembangkan bisnismu dengan laporan keuangan yang andal sebagai acuan pengambilan keputusan."
+    title: "Financial Report",
+    desc: "Grow your business with reliable financial reports for decision-making."
   },
   {
-    title: "Rencana Tabungan",
-    desc: "Pantau terus tagihan dan cicilan transaksi bisnis non-tunai secara berkala, cepat, dan tepat waktu."
+    title: "Savings Plan",
+    desc: "Keep track of bills and installments for cashless business transactions regularly, quickly, and on time."
   },
 ]
