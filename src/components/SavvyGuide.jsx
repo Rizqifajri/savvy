@@ -10,35 +10,35 @@ const SavvyGuide = () => {
     {
       imgPosition: 'md:flex-row-reverse',
       imgSrc: transaction,
-      title: 'Catatan Transaksi',
-      description: 'Mengelola Keuangan bisnis kini terasa menyenangkan selesaikan pencatatan transaksi bisnis kurang dari satu menit'
+      title: 'Record Transaction',
+      description: 'Managing business finances is now a pleasure to complete business transaction recording in less than a minute'
     },
     {
       imgPosition: '',
       imgSrc: advancebudget,
       title: 'Advance Budgeting',
-      description: 'Kelola keuangan anda untuk kebutuhan anda dengan mudah dengan fitur advance budgeting.'
+      description: 'Manage your finances for your needs easily with the advance budgeting feature.'
     },
     {
       imgPosition: 'md:flex-row-reverse',
       imgSrc: saving,
       title: 'Savings',
-      description: 'Catat tabungan anda dengan cara yang mudah dan tertata rapih'
+      description: 'Record your savings in an easy and organized way'
     },
     {
       imgPosition: '',
       imgSrc: transactiontrace,
       title: 'Print transaction traces without time limit',
-      description: 'Melihat pencatatan transaksi, tabungan, dan pengelolaan uang anda tanpa batas waktu yang ditentukan.'
+      description: 'View your transaction records, savings, and money management indefinitely.'
     },
     
   ];
 
   return (
-    <section className='flex flex-col py-24 gap-20 md:gap-24 relative'>
+    <section id='how-it-works' className='flex flex-col py-24 gap-20 md:gap-24 relative'>
       <span className='hidden sm:absolute w-0.5 h-[35vh] bg-gray-200 mx-auto'></span>
       <h1 className='text-left md:text-center font-bold text-[30px] text-purple-900 mx-5 '>
-      Bagaimana SAVVY Bekerja untuk Membantu Mengatur Keuangan Anda?
+      How does SAVVY Work to Help Manage Your Finances?
       </h1>
       {sections.map((section, index) => (
         <div key={index} className={`flex flex-col md:flex-row justify-center items-center md:gap-44 md:mx-56 ${section.imgPosition}`}>

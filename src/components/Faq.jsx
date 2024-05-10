@@ -7,7 +7,7 @@ import {
 } from "./ui/accordion";
 const Faq = () => {
   return (
-    <section className='bg-purple-100 h-full py-24'>
+    <section id="faq" className='bg-purple-100 h-full py-24'>
       <div className="pb-10">
         <h1 className='text-center font-bold text-[30px] text-purple-900 mx-5 '>
         F.A.Q
