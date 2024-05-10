@@ -11,11 +11,11 @@ const NavigationBar = () => {
         <ul className="hidden md:flex gap-2">
           {dataNavigate.map((item, index) => (
             <li key={index}>
-              <a href={item.href} className="text-purple-800 hover:bg-purple-400 rounded-xl font-semibold hover:text-white px-4 py-2 transition-all">{item.title}</a>
+              <a href={item.href} className="text-white hover:bg-purple-400 rounded-xl font-semibold hover:text-white px-4 py-2 transition-all">{item.title}</a>
             </li>
           ))}
         </ul>
-        <Button title="Get started"/>
+        <Button title="Try it Now"/>
       </div>
     </section>
   );
