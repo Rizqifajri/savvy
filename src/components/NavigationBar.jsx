@@ -3,9 +3,12 @@ import logo from "../assets/logo.png";
 import { dataNavigate } from "../data/data.navigate";
 import Button from "./Button";
 import { Link, animateScroll as scroll } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate()
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +51,8 @@ const NavigationBar = () => {
             </li>
           ))}
         </ul>
-        <Button title='Try it Now' />
+
+        <Button onClick={()=> navigate('/login-user')} title='Try it Now' />
       </div>
     </section>
   );
