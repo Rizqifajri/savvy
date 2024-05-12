@@ -1,10 +1,13 @@
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from "./components/NavigationBar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
 
 export default function Layout({ children }) {
   return (
     <>
       <NavigationBar />
-      <main>{children}</main>
+      <Home />
+      <Footer />
     </>
   );
 }

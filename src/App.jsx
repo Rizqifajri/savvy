@@ -1,23 +1,34 @@
-import Jumbotron from "./components/Jumbotron";
-import AboutSavvy from "./components/AboutSavvy";
-import FeatureSavvy from "./components/FeatureSavvy";
-import SavvyGuide from "./components/SavvyGuide";
-import Faq from "./components/Faq"
-import React from "react";
-import ProductDownload from "./components/ProductDownload";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import LoginPage from "./pages/LoginPage";
+import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
+
+function Layout({ children }) {
+  return (
+    <div>
+      <NavigationBar />
+      {children}
+      <Footer />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <>
-      <Jumbotron />
-      <AboutSavvy />
-      <FeatureSavvy />
-      <SavvyGuide />
-      <Faq/>
-      <ProductDownload/>
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route path='/login-user' element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
 }
 
