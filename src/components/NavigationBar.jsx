@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import { dataNavigate } from "../data/data.navigate";
-import Button from "./Button";
+import { Button, buttonVariants } from "./ui/button";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
 const NavigationBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,8 +50,14 @@ const NavigationBar = () => {
             </li>
           ))}
         </ul>
-
-        <Button onClick={()=> navigate('/login-user')} title='Try it Now' />
+        <Button
+          className="bg-purple-600 text-white hover:scale-105 transition-all "
+          variant='custom'
+          type='button'
+          onClick={() => navigate("/login")}
+        >
+          Try it Now
+        </Button>
       </div>
     </section>
   );
