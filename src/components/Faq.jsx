@@ -8,7 +8,6 @@ import {
 import { TextReveal } from "./animation/TextReveal";
 import { textReveal } from "@/lib/variants";
 
-
 const Faq = () => {
   return (
     <section id='faq' className='bg-purple-100 h-full py-24'>
@@ -32,28 +31,33 @@ const Faq = () => {
         >
           <AccordionItem value='item-1'>
             <AccordionTrigger className='text-xl'>
-              Is it accessible?
+              what is savvy
             </AccordionTrigger>
             <AccordionContent className='text-lg'>
-              Yes. It adheres to the WAI-ARIA design pattern.
+              Savvy is a digital platform that helps you manage personal
+              finances in an easy and efficient way. We provide tools for budget
+              planning, expense tracking expenses, and financial analysis.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value='item-2'>
             <AccordionTrigger className='text-xl'>
-              Is it styled?
+              Does Savvy have a mobile app?
             </AccordionTrigger>
             <AccordionContent className='text-lg'>
-              Yes. It comes with default styles that matches the other
-              components&apos; aesthetic.
+              Yes, Savvy has a mobile app available for download in the Google
+              Play Store for easy access and management of your finances from
+              your mobile device.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value='item-3'>
             <AccordionTrigger className='text-xl'>
-              Is it animated?
+              How does Savvy work?
             </AccordionTrigger>
             <AccordionContent className='text-lg'>
-              Yes. It&apos;s animated by default, but you can disable it if you
-              prefer.
+              You can save your money by opening an account with Savvy. Once
+              your account is created, you can set up your money flow, manage
+              your balance, and make transactions as per your needs. balance,
+              and make transactions according to your needs.
             </AccordionContent>
           </AccordionItem>
         </Accordion>

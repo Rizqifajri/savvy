@@ -1,6 +1,6 @@
 import React from "react";
 import product from "../assets/product-download.png";
-import googlePlay from "../assets/googleplay.png";
+import googlePlay from "../assets/google-play-badge.png";
 import Motion from "./animation/Motion";
 import { TextReveal } from "./animation/TextReveal";
 import { fromLeft, fromTop, textReveal } from "@/lib/variants";

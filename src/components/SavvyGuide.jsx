@@ -56,7 +56,10 @@ const SavvyGuide = () => {
           key={index}
           className={`flex flex-col md:flex-row justify-center items-center md:gap-44 md:mx-56 ${section.imgPosition}`}
         >
-          <Motion variants={index % 2 === 0 ? fromLeft : fromRight} custom={index}>
+          <Motion
+            variants={index % 2 === 0 ? fromLeft : fromRight}
+            custom={index}
+          >
             <img
               className='object-contain w-full sm:w-80 lg:w-[600px] mx-auto'
               src={section.imgSrc}
@@ -68,11 +71,9 @@ const SavvyGuide = () => {
             <div className='flex flex-col w-64 md:w-full mx-5'>
               <h1 className='font-bold text-purple-900 text-[20px] lg:text-[40px]'>
                 <TextReveal variants={textReveal} text={section.title} />
-                
               </h1>
               <p className='font-medium text-gray-800 text-[12px] lg:text-[16px] pt-2 text-left'>
-              <TextReveal variants={textReveal} text={section.description} />
-                
+                <TextReveal variants={textReveal} text={section.description} />
               </p>
             </div>
           </div>

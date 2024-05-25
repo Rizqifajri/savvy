@@ -1,8 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Team from "./components/Team";
 import LoginPage from "./pages/LoginPage";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
+import DemoFeature from "./pages/DemoFeature";
+import Savings from "./pages/Savings";
+
 
 function Layout({ children }) {
   return (
@@ -26,7 +30,17 @@ function App() {
             </Layout>
           }
         />
-        <Route path='/login-user' element={<LoginPage />} />
+        <Route
+          path='/savvys-team'
+          element={
+            <Layout>
+              <Team />
+            </Layout>
+          }
+        />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/feature-demo' element={<DemoFeature />} />
+        <Route path='/feature-demo/savings' element={<Savings />} />
       </Routes>
     </Router>
   );
