@@ -3,12 +3,10 @@ import wallet from "../assets/3dwallet.png";
 import moneymouth from "../assets/3dmoney-mouth.png";
 import starstuck from "../assets/3dstarstruck.png";
 import coins from "../assets/3dcoins.png";
-import locked from "../assets/locked.png";
-import googleplay from "../assets/google-play-badge.png";
-import { MdCancel } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { onPopUp } from "../lib/variants";
+
+import NotificationFeature from "./NotificationFeature";
 
 const featureOnDemo = [
   {
@@ -59,18 +57,18 @@ const FeatureOnDemo = () => {
 
   return (
     <section>
-      <div className='grid grid-cols-2 gap-10 mx-5'>
+      <div className='grid md:grid-cols-2 gap-10 mx-10'>
         {featureOnDemo.map((item, index) => (
           <div
             key={index}
             onClick={() => goToFeaturePage(item.href, item.feature)}
-            className='bg-white cursor-pointer hover:scale-105 hover:shadow-lg transition-all hover:bg-orange-400 w-full h-52 rounded-lg border-4 border-orange-500 flex justify-between items-center hover:text-white p-5 mx-auto '
+            className='bg-white cursor-pointer hover:scale-105 hover:shadow-lg transition-all hover:bg-orange-400 w-full xl:h-60 rounded-lg border-4 border-orange-500 flex justify-between items-center hover:text-white p-5  mx-auto '
           >
             <div>
-              <h1 className='text-[60px] font-bold text-orange'>
+              <h1 className='text-15px md:text-[30px] xl:text-[50px] font-bold text-orange'>
                 {item.feature}
               </h1>
-              <p className='text-[20px] font-semibold text-orange'>
+              <p className='text-[12px] xl:text-[20px] font-semibold text-orange'>
                 {item.desc}
               </p>
             </div>
@@ -80,41 +78,7 @@ const FeatureOnDemo = () => {
       </div>
 
       <AnimatePresence>
-        {isPopUpVisible && (
-          <div className='fixed inset-0 backdrop-blur-md bg-black bg-opacity-80 flex items-center justify-center'>
-            <motion.div
-              variants={onPopUp}
-              initial='initial'
-              animate='animate'
-              exit='exit'
-              className='bg-purple-900 w-[900px] relative flex justify-center items-center h-[500px] rounded-xl shadow-xl'
-            >
-              <button
-                onClick={closePopUp}
-                className='absolute top-10 right-10 text-[50px]'
-              >
-                <MdCancel
-                  fill='white'
-                  className='hover:scale-105 transition-all'
-                />
-              </button>
-              <img className='w-56 object-cover ' src={locked} alt='' />
-              <div className='flex flex-col'>
-                <h1 className='font-bold text-white text-[50px]'>
-                  Ooopps ! Sorry,
-                </h1>
-                <h3 className='font-medium text-gray-300 text-[20px]'>
-                  THIS VERSION IS ONLY ON MOBILE APPS!
-                </h3>
-                <p className='font-medium text-gray-300 '>
-                  If you want to try this feature, you can download it on Google
-                  Play Store.
-                </p>
-                <img className='w-56 ' src={googleplay} alt='' />
-              </div>
-            </motion.div>
-          </div>
-        )}
+        {isPopUpVisible && <NotificationFeature closePopUp={closePopUp} />}
       </AnimatePresence>
     </section>
   );

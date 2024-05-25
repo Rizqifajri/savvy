@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const AdvanceBudgeting = () => {
-  return (
-    <div>
-      AdvanceBudget
-    </div>
-  )
-}
+  return <div>AdvanceBudget</div>;
+};
 
-export default AdvanceBudgeting
+export default AdvanceBudgeting;

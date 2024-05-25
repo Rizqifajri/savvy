@@ -30,7 +30,7 @@ export function WavyBackgroundHome() {
           <div className='pt-10'>
             <Motion variants={fromTop}>
               <img
-                className='object-contain mx-auto w-[350px] md:w-[600px] lg:w-[1080px] z-20'
+                className='object-contain mx-auto w-[350px] md:w-[600px] lg:w-[1500px] z-20'
                 src={productbanner}
                 alt=''
               />

@@ -28,9 +28,9 @@ const NavigationBar = () => {
   }, []);
 
   return (
-    <section className='fixed top-0 w-full z-50'>
+    <section className='font-poppins fixed top-0 w-full z-50'>
       <div
-        className={`backdrop-blur-xl flex justify-between items-center px-4 py-2 z-50 ${
+        className={`backdrop-blur-lg flex justify-between items-center px-4 py-2 z-50 ${
           isScrolled ? "text-purple-500" : "text-white"
         }`}
       >
@@ -41,7 +41,7 @@ const NavigationBar = () => {
               <Link
                 to={item.href}
                 smooth={true}
-                className={`hover:bg-purple-400 cursor-pointer rounded-xl font-semibold hover:text-white px-4 py-2 transition-all ${
+                className={`hover:bg-purple-400 cursor-pointer rounded-md font-semibold hover:text-white px-4 py-2 transition-all ${
                   isScrolled ? "text-purple-500" : "text-white"
                 }`}
               >
@@ -51,7 +51,7 @@ const NavigationBar = () => {
           ))}
         </ul>
         <Button
-          className="bg-purple-600 text-white hover:scale-105 transition-all "
+          className='bg-purple-600 text-white hover:scale-105 transition-all '
           variant='custom'
           type='button'
           onClick={() => navigate("/login")}

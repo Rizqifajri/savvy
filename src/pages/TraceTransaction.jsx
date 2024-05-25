@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const TraceTransaction = () => {
-  return (
-    <div>
-      Trace Transaction
-    </div>
-  )
-}
+  return <div>Trace Transaction</div>;
+};
 
-export default TraceTransaction
+export default TraceTransaction;

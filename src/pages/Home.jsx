@@ -5,6 +5,7 @@ import FeatureSavvy from "@/components/FeatureSavvy";
 import SavvyGuide from "@/components/SavvyGuide";
 import Faq from "@/components/Faq";
 import ProductDownload from "@/components/ProductDownload";
+import Team from "../components/Team";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <SavvyGuide />
       <Faq />
       <ProductDownload />
+      <Team />
     </>
   );
 };

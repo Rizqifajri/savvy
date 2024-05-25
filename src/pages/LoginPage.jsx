@@ -1,21 +1,20 @@
 import CardLogin from "@/components/CardLogin";
-import TopWave from "@/assets/waves/TopWave";
+import image from "../assets/image1.png";
 import React from "react";
 
 const LoginPage = () => {
   return (
-    <div className='h-screen'>
-      <div className=' w-full h-56'>
-        <div className='relative'>
-          <h1 className='absolute top-32 left-10 text-white text-4xl text-left font-semibold '>
-            Welcome to Savvy {"> <"} !
-          </h1>
-          <TopWave/>
-        </div>
+    <div className='h-screen grid grid-cols-2 items-center'>
+      <div className='h-screen bg-purple-400'>
+        <img
+          className='object-contain h-full bg-gradient-to-b from-[#F24369] to-[#3F3B91]'
+          src={image}
+          alt=''
+        />
       </div>
-      <div>
-        <CardLogin />
-      </div>
+
+      <CardLogin />
+      
     </div>
   );
 };

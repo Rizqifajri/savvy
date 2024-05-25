@@ -1,0 +1,39 @@
+/* .card {
+  width: 300px;
+  height: 300px;
+  background-color: #08aeea;
+  background-image: linear-gradient(180deg, #08aeea 0%, #2af598 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+} */
+
+/* Progress bar */
+#container {
+  width: 200px;
+  height: 130px;
+  margin: 0 auto;
+  background-color: transparent;
+}
+
+.description {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.progressbar__label {
+  font-size: 1rem;
+  transform: translate(-50%, 0) !important;
+  font-weight: bold;
+  
+}
+
+#progress-svg {
+  height: 130px;
+  width: 200px;
+  fill: none;
+  stroke: #dd7352;
+  stroke-width: 15;
+  stroke-linecap: round;
+  /* filter: drop-shadow(-3px -2px 5px rgba(255, 255, 255, 0.5)); */
+}
