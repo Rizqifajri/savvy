@@ -1,8 +1,30 @@
-# React + Vite
+# Savvy
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A financial management app designed to give you complete control over your finances. With intuitive transaction logging, organized savings, and powerful financial management tools, Savvy is here to help you achieve your financial goals more easily. 
 
-Currently, two official plugins are available:
+## Tech Stack :
+React + Vite, 
+Tailwind CSS,
+shadcn UI,
+Frammer motion
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Demo 
+
+  link : https://savvy-seven.vercel.app/
+
+## Installation
+
+1. Clone this repository
+   ```sh
+   https://github.com/Rizqifajri/savvy.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run program with
+   ```sh
+   npm run dev
+   ```
+   
