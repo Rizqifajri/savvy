@@ -6,6 +6,7 @@ import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
 import DemoFeature from "./pages/DemoFeature";
 import Savings from "./pages/Savings";
+import { AuthMiddleware } from "./auth/middleware";
 
 
 function Layout({ children }) {
@@ -39,7 +40,7 @@ function App() {
           }
         />
         <Route path='/login' element={<LoginPage />} />
-        <Route path='/feature-demo' element={<DemoFeature />} />
+        <Route path='/feature-demo' element={ <AuthMiddleware><DemoFeature /></AuthMiddleware>} />
         <Route path='/feature-demo/savings' element={<Savings />} />
       </Routes>
     </Router>
