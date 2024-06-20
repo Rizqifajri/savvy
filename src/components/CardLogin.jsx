@@ -20,7 +20,6 @@ const CardLogin = () => {
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
-
   const handleLogin = async () => {
     setIsLoading(true)
     try {
@@ -41,8 +40,6 @@ const CardLogin = () => {
       navigate('/feature-demo')
     }
 })
-
-  
 
   return (
     <section className='flex justify-center my-56 mx-auto '>
@@ -77,7 +74,7 @@ const CardLogin = () => {
                   {isLoading? 'Loading....' : 'Login'}
                 </Button>
                 <p className='text-gray-500 text-[14px] text-center'>
-                  dont haven't account? <Link className="underline font-bold">Register</Link>
+                  dont haven't account? <Link to='/register' className="underline font-bold">Register</Link>
                 </p>
               </div>
             </div>
