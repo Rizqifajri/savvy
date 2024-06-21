@@ -1,6 +1,6 @@
 import "../App.css";
 
-const ProgressBar = ({ balance }) => {
+const ProgressBar = ({ totalSaving, progressPercentage }) => {
   const percentage = (percent) => {
     const valueDashOffset = 722 - (percent / 100) * 361;
     return `${valueDashOffset}px`;
@@ -36,13 +36,13 @@ const ProgressBar = ({ balance }) => {
             stroke='#EB7F63'
             strokeWidth={26}
             strokeLinecap='round'
-            strokeDashoffset={percentage(50)} //0% = 722, 50% = 541.5 , 100% = 361 => rumus 722 - (persen * 4)
+            strokeDashoffset={percentage(progressPercentage)} //0% = 722, 50% = 541.5 , 100% = 361 => rumus 722 - (persen * 4)
             fill='transparent'
             strokeDasharray='722.2px'
           />
         </svg>
         <p className='absolute text-center top-[33%] text-white left-[23%]  '>
-          Rp 150,000 <br /> <span className=''>sudah terkumpul</span>
+         IDR {totalSaving} <br /> <span className=''>sudah terkumpul</span>
         </p>
       </div>
     </>
