@@ -5,15 +5,14 @@ import React from "react";
 const RegisterPage = () => {
   return (
     <div>
-      <div className='h-screen grid grid-cols-2 items-center'>
+      <div className='h-screen flex flex-col md:flex-row items-center'>
         <div className='h-full bg-purple-400'>
           <img
-            className='object-contain h-full bg-gradient-to-b from-[#F24369] to-[#3F3B91]'
+            className='hidden lg:flex object-contain h-full bg-gradient-to-b from-[#F24369] to-[#3F3B91]'
             src={image}
             alt=''
           />
         </div>
-
         <CardSignUp />
       </div>
     </div>

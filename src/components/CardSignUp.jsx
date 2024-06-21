@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import Motion from "./animation/Motion";
 import { onPopUp, opacityIn } from "@/lib/variants";
 import { Link, useNavigate } from "react-router-dom";
-import { signUp } from "@/data/getApi";
+import { signUp } from "@/services/getApi";
 
 const CardSignUp = () => {
   const [name, setName] = useState("");
@@ -17,7 +17,6 @@ const CardSignUp = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
-
 
   const handleSignUp = async () => {
     try{
@@ -30,9 +29,10 @@ const CardSignUp = () => {
   }
 
   return (
-    <section className='flex justify-center my-56 mx-auto '>
+    <section className='flex flex-col lg:flex-row justify-center my-56 mx-auto  '>
+      <h1 className="lg:hidden text-[30px] font-bold mb-5 text-purple-600 text-center">Welcome To Savvy !</h1>
       <Motion variants={opacityIn}>
-        <Card className='border-none shadow-lg w-[500px]'>
+        <Card className='border-none shadow-lg h-full w-full md:w-[500px]'>
           <CardContent>
             <div>
               <img className='mx-auto mb-5' src={logo} alt='' />

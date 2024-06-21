@@ -6,11 +6,13 @@ import { FcGoogle } from "react-icons/fc";
 import React, { useEffect, useState } from "react";
 import Motion from "./animation/Motion";
 import { opacityIn } from "@/lib/variants";
-import { logIn } from "@/data/getApi";
+import { logIn } from "@/services/getApi";
 import { currentUserAtom } from "@/lib/atoms";
 import { useAtom } from "jotai";
 import { Link, useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import LoadingIcons from 'react-loading-icons'
+import { Bars } from 'react-loading-icons'
 
 const CardLogin = () => {
   const [username, setUsername] = useState('');
@@ -42,9 +44,10 @@ const CardLogin = () => {
 })
 
   return (
-    <section className='flex justify-center my-56 mx-auto '>
+    <section className='flex flex-col lg:flex-row justify-center my-56 mx-auto '>
+      <h1 className="lg:hidden text-[30px] font-bold mb-5 text-purple-600 text-center">Welcome To Savvy !</h1>
       <Motion variants={opacityIn}>
-        <Card className='border-none shadow-lg h-full w-[500px]'>
+        <Card className='border-none shadow-lg h-full w-full md:w-[500px]'>
           <CardContent>
             <div>
               <img className='mx-auto mb-5' src={logo} alt='logo' />
@@ -71,7 +74,7 @@ const CardLogin = () => {
                   onClick={handleLogin}
                   disabled={isLoading}
                 >
-                  {isLoading? 'Loading....' : 'Login'}
+                  {isLoading? <Bars className="w-5" strokeWidth={25}/> : 'Login'}
                 </Button>
                 <p className='text-gray-500 text-[14px] text-center'>
                   dont haven't account? <Link to='/register' className="underline font-bold">Register</Link>
