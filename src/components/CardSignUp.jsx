@@ -8,29 +8,36 @@ import Motion from "./animation/Motion";
 import { onPopUp, opacityIn } from "@/lib/variants";
 import { Link, useNavigate } from "react-router-dom";
 import { signUp } from "@/services/getApi";
+import { set } from "date-fns";
+import { Bars } from "react-loading-icons";
 
 const CardSignUp = () => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false)
-  const navigate = useNavigate()
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignUp = async () => {
-    try{
-      const data = await signUp(name, username, email, password)
-      console.log(data)
-      navigate('/login')
-    }catch(error){
+    try {
+      setIsLoading(true);
+      const data = await signUp(name, username, email, password);
+      console.log(data);
+      navigate("/login");
+    } catch (error) {
       setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
     <section className='flex flex-col lg:flex-row justify-center my-56 mx-auto  '>
-      <h1 className="lg:hidden text-[30px] font-bold mb-5 text-purple-600 text-center">Welcome To Savvy !</h1>
+      <h1 className='lg:hidden text-[30px] font-bold mb-5 text-purple-600 text-center'>
+        Welcome To Savvy !
+      </h1>
       <Motion variants={opacityIn}>
         <Card className='border-none shadow-lg h-full w-full md:w-[500px]'>
           <CardContent>
@@ -42,28 +49,28 @@ const CardSignUp = () => {
                   type='name'
                   placeholder='Name'
                   value={name}
-                  onChange={(e)=> setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                 ></Input>
                 <Input
                   className='bg-white text-gray-800'
                   type='username'
                   placeholder='Username'
                   value={username}
-                  onChange={(e)=> setUsername(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)}
                 ></Input>
                 <Input
                   className='bg-white text-gray-800'
                   type='email'
                   placeholder='Email'
                   value={email}
-                  onChange={(e)=> setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 ></Input>
                 <Input
                   className='bg-white text-gray-800'
                   type='password'
                   placeholder='Password'
                   value={password}
-                  onChange={(e)=> setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 ></Input>
                 <Button
                   className='bg-purple-600 text-white transition-all '
@@ -72,7 +79,7 @@ const CardSignUp = () => {
                   onClick={handleSignUp}
                   disabled={isLoading}
                 >
-                 {isLoading? 'Loading...' : 'Signup'} 
+                  {isLoading ? <Bars className="w-5"/> : "Signup"}
                 </Button>
                 <p className='text-gray-500 text-[14px] text-center'>
                   or Login with
