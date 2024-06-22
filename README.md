@@ -34,7 +34,7 @@ Follow these steps to set up the project locally:
    ```sh
    npm install
    ```
-3. **Run program with**
+3. **Run program with*
    ```sh
    npm run dev
    ```
