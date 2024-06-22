@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import DatePicker from "./DatePicker";
 import SavingMethod from "./SavingMethod";
 import { Button } from "./ui/button";
-import LoadingIcons from 'react-loading-icons'
-import { Bars } from 'react-loading-icons'
+import { Bars } from 'react-loading-icons';
 import {
   Form,
   FormField,
@@ -18,19 +16,9 @@ import {
 } from "./ui/form";
 import { Input } from "./ui/input";
 import { toast, useToast } from "../components/ui/use-toast";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select";
 import { useAtom } from "jotai";
 import { currentUserAtom } from "@/lib/atoms";
 import { createSaving } from "@/services/getApi";
-import { Toast } from "./ui/toast";
 
 const formSchema = z.object({
   purpose: z.string().min(2, {
@@ -59,7 +47,7 @@ const AddSaving = ({ onClose, onSavingAdded }) => {
   const [currentUser] = useAtom(currentUserAtom);
   const [savingMethod, setSavingMethod] = useState("daily");
   const { toast } = useToast();
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -74,9 +62,8 @@ const AddSaving = ({ onClose, onSavingAdded }) => {
   });
 
   async function onSubmit(data) {
-    
     try {
-      setLoading(true)
+      setLoading(true);
       const savingData = {
         category_name: data.purpose,
         date: data.startDate,
@@ -94,23 +81,20 @@ const AddSaving = ({ onClose, onSavingAdded }) => {
         title: "Success!",
         description: "Successfully created your saving!",
       });
-      onSavingAdded(response.saving); 
+      onSavingAdded(response.saving);
       onClose();
     } catch (error) {
       console.error("Form data is invalid:", error);
-    }finally{
-      setLoading(false)
+    } finally {
+      setLoading(false);
     }
   }
 
   return (
-    <section className="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-black bg-opacity-80">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-lg">
+    <section className="fixed inset-0 flex items-center justify-center backdrop-blur-md bg-black bg-opacity-80 overflow-auto">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-lg max-h-[90vh] overflow-auto">
         <h2 className="text-2xl font-bold mb-4">Add Saving</h2>
-        <SavingMethod
-          setSavingMethod={setSavingMethod}
-          className="w-full mb-4"
-        />
+        <SavingMethod setSavingMethod={setSavingMethod} className="w-full mb-4" />
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
@@ -211,9 +195,8 @@ const AddSaving = ({ onClose, onSavingAdded }) => {
                 className="w-full bg-purple-500 text-white"
                 disabled={loading}
               >
-                {loading? <Bars className="w-5" strokeWidth={25}/> :'Submit'}
+                {loading ? <Bars className="w-5" strokeWidth={25} /> : 'Submit'}
               </Button>
-
               <Button
                 onClick={onClose}
                 variant="custom"

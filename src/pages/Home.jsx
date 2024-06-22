@@ -9,7 +9,7 @@ import Team from "../components/Team";
 
 const Home = () => {
   return (
-    <>
+    <section className="overflow-auto">
       <Jumbotron />
       <AboutSavvy />
       <FeatureSavvy />
@@ -17,7 +17,7 @@ const Home = () => {
       <Faq />
       <ProductDownload />
       <Team />
-    </>
+    </section>
   );
 };
 
