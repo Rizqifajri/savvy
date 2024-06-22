@@ -21,12 +21,12 @@ const CardSignUp = () => {
   const navigate = useNavigate();
 
   const handleSignUp = async () => {
+    setIsLoading(true);
     try {
-      setIsLoading(true);
-      const data = await signUp(name, username, email, password);
-      console.log(data);
+      await signUp(name, username, email, password);
       navigate("/login");
     } catch (error) {
+      console.log(error.message)
       setError(error.message);
     } finally {
       setIsLoading(false);
@@ -72,6 +72,7 @@ const CardSignUp = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 ></Input>
+                {error? <p className="text-red-500">{error}</p> : "" }
                 <Button
                   className='bg-purple-600 text-white transition-all '
                   variant='custom'
@@ -79,7 +80,7 @@ const CardSignUp = () => {
                   onClick={handleSignUp}
                   disabled={isLoading}
                 >
-                  {isLoading ? <Bars className="w-5"/> : "Signup"}
+                  {isLoading ? <Bars className='w-5' /> : "Signup"}
                 </Button>
                 <p className='text-gray-500 text-[14px] text-center'>
                   or Login with

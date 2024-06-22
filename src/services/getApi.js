@@ -19,7 +19,7 @@ export const signUp = async (name, username, email, password) => {
   try {
     const response = await axios.post(`${API_URL}/users`, { name, username, email, password })
     return response.data
-  } catch {
+  } catch(error) {
     throw new Error(error.response.data.message || 'Register failed');
   }
 }
