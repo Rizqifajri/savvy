@@ -16,7 +16,6 @@ const Home = () => {
       <SavvyGuide />
       <Faq />
       <ProductDownload />
-      <Team />
     </section>
   );
 };
